@@ -1,25 +1,27 @@
-<h1>Welcome to Customer Management System</h1>
-<div>
-  <nav style="background-color: #007bff;" class="navbar navbar-expand-lg navbar-dark">
-    <div class="container">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
+<!-- Adjust path and height as needed -->
+<h2>Customer Management System</h2>
 
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item">
-            <a class="nav-link" routerLink="add" routerLinkActive="active">Add Customer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" routerLink="view" routerLinkActive="active">View Customers</a>
-          </li>
-          <!-- ... your existing code ... -->
-        </ul>
-      </div>
+
+
+<div class="nav-links">
+  <div class="dropdown">
+    <button class="dropbtn">Signup/Login</button>
+    <div class="dropdown-content">
+      <a href="signup">Signup</a>
+      <a href="login" id="logout">Login</a>
+      <a href="#" id="logout">Logout</a>
+      
     </div>
-  </nav>
+  </div>
 </div>
+
 <router-outlet></router-outlet>
 
-<!-- Your existing scripts without Bootstrap references -->
+<script>
+  // Add a script to handle the logout functionality
+  document.getElementById('logout').addEventListener('click', function() {
+    // Implement your logout logic here, for example, redirecting to a logout route
+    // window.location.href = '/logout';
+    console.log('User logged out');
+  });
+</script>

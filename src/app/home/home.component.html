@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management System</title>
+  <link rel="stylesheet" href="home.component.css">
+  <style>
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      max-height: 400px; /* Adjust the maximum height of the slider */
+    }
+
+    .slider {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      box-sizing: border-box;
+    }
+
+    /* Add more styling as needed */
+  </style>
+</head>
+
+<body>
+  <div class="top-nav">
+    <div class="home-container">
+
+      <section class="system-information">
+        <h2>About Our System</h2>
+        <p>
+          Our Customer Management System provides a comprehensive platform for managing and maintaining customer
+          relationships. It streamlines your business processes, enhances customer satisfaction, and drives growth.
+        </p>
+      </section>
+
+      <section class="contact-info">
+        <h2>Contact Us</h2>
+        <p>
+          Have questions or need assistance? Reach out to our support team.<br>
+          Email: support@customer.com<br>
+          Phone: +91 (987) 456-7890
+        </p>
+      </section>
+
+    </div>
+  </div>
+
+  <script src="home.component.js"></script>
+  <script>
+    const slider = document.querySelector('.slider');
+    let counter = 1;
+
+    function slide() {
+      counter++;
+      if (counter > 3) {
+        counter = 1;
+      }
+      slider.style.transform = 'translateX(' + (-100 * (counter - 1)) + '%)';
+    }
+
+    setInterval(slide, 3000); // Change slide every 3 seconds (adjust as needed)
+  </script>
+</body>
+<router-outlet></router-outlet>
+</html>

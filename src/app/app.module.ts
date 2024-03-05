@@ -13,8 +13,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './component/edit/edit.component';
 import { SpinnerComponent } from './component/spinner/spinner.component';
 import { WatchComponent } from './component/watch/watch.component';
-import { AdminLoginComponent } from './admin-login/admin-login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { LoginComponent } from './component/login/login.component';
+//import { SignupComponent } from './component/signup/signup.component';
+import { HomeComponent } from './home/home.component';
+import { RouterModule, Routes } from '@angular/router';
+import { SignupComponent } from './signup/signup.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +30,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     EditComponent,
     SpinnerComponent,
     WatchComponent,
-    AdminLoginComponent,
-    DashboardComponent
+    LoginComponent,
+   // SignupComponent,
+    HomeComponent,
+   SignupComponent, // Assuming your login component is named LoginComponent
   ],
+
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -36,9 +46,10 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule
-
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+

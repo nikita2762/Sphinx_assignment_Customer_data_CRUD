@@ -4,14 +4,6 @@ import { MyserviceService } from 'src/app/service/myservice.service';
 import {employee} from '../employeemodel'
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-interface gender{
-  value:string;
-  viewvalue:string;
-}
-interface userposition{
-  value:string;
-  viewvalue:string;
-}
 @Component({
   selector: 'app-add',
   templateUrl: './add.component.html',
@@ -26,16 +18,16 @@ export class AddComponent implements OnInit {
    this.createCustomer = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      contact: new FormControl('', Validators.required)
+      phone: new FormControl('', Validators.required)
     });
   }
 
   onSubmit(form: FormGroup){
-    const newUser = {name: form.value.name, email: form.value.email, contact: form.value.contact}; 
+    const newUser = {name: form.value.name, email: form.value.email, phone: form.value.phone}; 
 
-    this.employeeservice.createuser(newUser).subscribe((data) => {
+    this.employeeservice.createCustomer(newUser).subscribe((data) => {
       alert(data.message);
-      this.router.navigate(['/']);
+      this.router.navigate(['/view']);
     }, error => {
       alert("New customer added successfully!");
     })   

@@ -8,8 +8,17 @@ import { Observable } from 'rxjs';
 export class MyserviceService {
 
   constructor(private http: HttpClient) { }
+
+// login
+login(data: any): Observable<any> {
+  return this.http.post<any>("http://localhost:3000/login", data);
+  // .pipe(map((data: any) => {
+  //   return data;
+  // }))
+}
+
 //create
-  createuser(data:any): Observable<any>{
+  createCustomer(data:any): Observable<any>{
     return this.http.post<any>("http://localhost:3000/customer",data)
 //  .pipe(map((data:any)=>{
 //   return data;
@@ -35,6 +44,11 @@ return this.http.put<any>("http://localhost:3000/customer/"+id,data)
 // .pipe(map((res:any)=>{
 //   return res;
 // }))
+}
+
+//create User
+createUser(data:any): Observable<any>{
+  return this.http.post<any>("http://localhost:3000/signup",data)
 }
 
 }

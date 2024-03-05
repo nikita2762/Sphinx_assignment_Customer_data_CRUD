@@ -29,20 +29,20 @@ export class EditComponent implements OnInit {
     this.updateCustomer = new FormGroup({
       name: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      contact: new FormControl('', Validators.required)
+      phone: new FormControl('', Validators.required)
     });
    this.Activatedroute.paramMap.subscribe((param: Params) => {
     this.dataid = +param['get']('id');  
 
     this.customerService.fetchdata(this.dataid).subscribe((data:any)=>{
-      this.updateCustomer.setValue({name: data[0].name, email: data[0].email, contact: data[0].contact });
+      this.updateCustomer.setValue({name: data[0].name, email: data[0].email, phone: data[0].phone });
     })
     })
     
   }
 
   onSubmit(form:FormGroup){
-    const updatedUser = {name: form.value.name, email: form.value.email, contact: form.value.contact}; 
+    const updatedUser = {name: form.value.name, email: form.value.email, phone: form.value.phone}; 
   this.customerService.update(updatedUser,this.dataid).subscribe((data:any)=>{
     alert('data updated sucessfully!!!')
   this.router.navigate(['/view'])

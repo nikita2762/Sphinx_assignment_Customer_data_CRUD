@@ -33,8 +33,9 @@ const getCustomerById = (request, response) => {
 const createCustomer = (request, response) => {
   const { name, email, phone } = request.body;
   pool.query(
-    'INSERT INTO customers (name, email, phone) VALUES ($1, $2, $3) RETURNING *',
+    'INSERT INTO customers (name, email, phone) VALUES ($1, $2, $3) ',
     [name, email, phone],
+    
     (error, results) => {
       if (error) {
         console.log('error while creating customer');
@@ -42,7 +43,7 @@ const createCustomer = (request, response) => {
         throw error;
       }
       // response.status(201).send(`Customer added with ID: ${results.rows[0].id}`);
-      response.status(201).json({status: 201, message: `Customer added with ID: ${results.rows[0].id}`})
+      response.status(201).json({status: 201, message: `New Customer added successfully!`})
     }
   );
 };
@@ -76,10 +77,39 @@ const deleteCustomer = (request, response) => {
   });
 };
 
+const createuser = (request, response) => {
+  const { username, email, password} = request.body;
+  console.log(username, email, password);
+  pool.query(
+    'INSERT INTO "User" (username,email,password) VALUES ($1, $2, $3)',
+    [username, email, password],
+    (error, results) => {
+      if (error) {
+        console.log('error while signing up');
+        console.log(error);
+        throw error;
+      }
+      // response.status(201).send(`Customer added with ID: ${results.rows[0].id}`);
+      response.status(201).json({status: 201, message: `New user added`})
+    }
+  );
+};
+
+// Log a message indicating successful database connection
+pool.query('SELECT 1', (error, results) => {
+  if (error) {
+    console.error('Error connecting to the database:', error);
+  } else {
+    console.log('Connected to the database');
+  }
+});
+
 module.exports = {
   getCustomers,
   getCustomerById,
   createCustomer,
   updateCustomer,
   deleteCustomer,
+  createuser
+
 };

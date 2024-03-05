@@ -1,7 +1,6 @@
 const express = require('express');
 const Sequelize = require("sequelize");
 const app = express();
-
 const bodyParser = require('body-parser');
 const pgp = require('pg-promise')();
 const port = 3000;
@@ -33,6 +32,22 @@ app.get('/', (request, response) => {
   app.post('/customer', db.createCustomer);
   app.put('/customer/:id', db.updateCustomer);
   app.delete('/customer/:id', db.deleteCustomer);
+  app.post('/signup', db.createuser);
+
+
+
+// Sample login endpoint
+app.post('/login', (req, res) => {
+  const { username, password } = req.body;
+
+  // Replace 'admin' and 'password' with your static username and password
+  if (username === 'nikita' && password === 'Pass@123') {
+    res.json({ success: true, message: 'Login successful' });
+  } else {
+    res.status(401).json({ success: false, message: 'Invalid username or password' });
+  }
+});
+
 
 app.listen(port, () => {
     console.log(`Server is running on http://localhost:${port}`);

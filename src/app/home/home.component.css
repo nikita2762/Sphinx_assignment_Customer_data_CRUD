@@ -1,0 +1,16 @@
+
+.home-container {
+  text-align: center;
+  
+}
+
+.system-information {
+  /* Add styling for system information section */
+  padding: 20px;
+}
+
+.system-information,
+.contact-info {
+  color: #100101; /* Change text color for these sections */
+  padding: 20px;
+}

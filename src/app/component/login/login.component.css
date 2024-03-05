@@ -1,0 +1,25 @@
+.login-container {
+    max-width: 300px; /* Set the maximum width of the container */
+    margin: auto; /* Center the container horizontally */
+    padding: 20px; /* Add some padding for better aesthetics */
+  }
+  
+  .form-group {
+    margin-bottom: 15px; /* Add some space between form groups */
+  }
+  
+  label {
+    display: block; /* Make labels block-level to stack them vertically */
+    margin-bottom: 5px; /* Add some space between labels and inputs */
+  }
+  
+  input {
+    width: 100%; /* Make the input fields take up the full width of the container */
+    padding: 8px; /* Add padding to the input fields */
+    box-sizing: border-box; /* Include padding and border in the total width/height */
+  }
+  
+  button {
+    width: 100%; /* Make the button take up the full width of the container */
+  }
+  
