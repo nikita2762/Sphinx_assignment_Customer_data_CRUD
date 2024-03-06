@@ -1,14 +1,6 @@
-<style>
-  .container {
-    background-image: url('D:\Customer_Data_CRUD\img.avif');
-    
-  }
-</style>
-
-
-<div class="login-container">
+<!-- <div class="login-container">
   <h2>Login</h2>
-  <form (ngSubmit)="login()" #loginForm="ngForm">
+  <form (ngSubmit)="loginUser()" #loginForm="ngForm">
     <div class="form-group">
       <label for="username">Username:</label>
       <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control" required>
@@ -19,4 +11,42 @@
     </div>
     <button type="submit" [disabled]="!loginForm.valid" class="btn btn-primary">Login</button>
   </form>
-</div>
+</div> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management System</title>
+    <link rel="stylesheet" href="login.component.css">
+</head>
+
+<body>
+
+    <div style="max-width: 320px; margin: auto; padding: 10px; border: 1px solid #060000; border-radius: 5px;">
+        <p></p>
+        <h2 style="text-align: center;">User Login</h2>
+
+        <!-- Update formGroup to the correct form group name (e.g., loginForm) -->
+        <form class="text-center" [formGroup]="loginuser" (ngSubmit)="onSubmit(loginuser)">
+            <div style="margin-bottom: 10px;">
+                <label for="Username">Username:</label>
+                <!-- Update formControlName to the correct control name (e.g., 'username') -->
+                <input type="text" id="username" formControlName="username" required style="width: 100%; padding: 8px;">
+            </div>
+            
+            <div style="margin-bottom: 10px;">
+                <label for="Password">Password:</label>
+                <!-- Update formControlName to the correct control name (e.g., 'password') -->
+                <input type="password" id="password" formControlName="password" required style="width: 100%; padding: 8px;">
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+
+    </div>
+    <router-outlet></router-outlet>
+
+</body>
+</html>

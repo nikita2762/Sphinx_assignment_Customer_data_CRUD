@@ -34,7 +34,7 @@ export class SignupComponent implements OnInit {
         (data) => {
           alert('Signup successful!');
           //this.createAdmin.reset();
-          this.router.navigate(['/view']);
+          this.router.navigate(['/login']);
         },
         (error) => {
           alert('Something went wrong');

@@ -51,4 +51,9 @@ createUser(data:any): Observable<any>{
   return this.http.post<any>("http://localhost:3000/signup",data)
 }
 
+//create User
+loginUser(data:any): Observable<any>{
+  return this.http.post<any>("http://localhost:3000/login",data)
+}
+
 }

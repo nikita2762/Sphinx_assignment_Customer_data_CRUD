@@ -38,6 +38,9 @@
           Our Customer Management System provides a comprehensive platform for managing and maintaining customer
           relationships. It streamlines your business processes, enhances customer satisfaction, and drives growth.
         </p>
+
+        <img src="/image1.jpg" alt="System Image">
+
       </section>
 
       <section class="contact-info">
@@ -53,20 +56,7 @@
   </div>
 
   <script src="home.component.js"></script>
-  <script>
-    const slider = document.querySelector('.slider');
-    let counter = 1;
-
-    function slide() {
-      counter++;
-      if (counter > 3) {
-        counter = 1;
-      }
-      slider.style.transform = 'translateX(' + (-100 * (counter - 1)) + '%)';
-    }
-
-    setInterval(slide, 3000); // Change slide every 3 seconds (adjust as needed)
-  </script>
+  
 </body>
 <router-outlet></router-outlet>
 </html>

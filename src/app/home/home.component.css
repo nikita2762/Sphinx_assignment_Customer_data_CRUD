@@ -3,7 +3,11 @@
   text-align: center;
   
 }
-
+.system-information img {
+  max-width: 80%;
+  max-height: 250px; /* Adjust the maximum height of the image */
+  height: auto;
+}
 .system-information {
   /* Add styling for system information section */
   padding: 20px;
@@ -14,3 +18,4 @@
   color: #100101; /* Change text color for these sections */
   padding: 20px;
 }
+

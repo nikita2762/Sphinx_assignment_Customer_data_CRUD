@@ -95,8 +95,32 @@ const createuser = (request, response) => {
   );
 };
 
-// Log a message indicating successful database connection
-pool.query('SELECT 1', (error, results) => {
+const loginuser = (request, response) => {
+  const { username, password } = request.body;
+  console.log(username, password);
+
+  pool.query(
+    'SELECT * FROM "User" WHERE username = $1 AND password = $2',
+    [username, password],
+    (error, results) => {
+      if (error) {
+        console.log('Error while attempting to log in');
+        console.log(error);
+        throw error;
+      }
+
+      if (results.rows.length === 1) {
+        // Login successful
+        response.json({ status: 200, message: 'Login successful' });
+      } else {
+        // Invalid username or password
+        response.status(401).json({ status: 401, message: 'Invalid username or password' });
+      }
+    }
+  );
+};
+
+pool.query('SELECT 1', (error, results) => {  // Log a message indicating successful database connection
   if (error) {
     console.error('Error connecting to the database:', error);
   } else {
@@ -110,6 +134,7 @@ module.exports = {
   createCustomer,
   updateCustomer,
   deleteCustomer,
-  createuser
+  createuser,
+  loginuser
 
 };
