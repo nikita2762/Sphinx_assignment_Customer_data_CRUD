@@ -6,7 +6,6 @@ h2 {
   text-align: center;
 }
 
-
 .nav-links {
   position: absolute;
   top: 10px;
@@ -33,8 +32,9 @@ h2 {
   color: white;
   padding: 8px 10px;
   margin-left: 5px;
-  border-radius: 3px;
+  border-radius: 5px;
   cursor: pointer;
+  width: 110px; /* Set a fixed width for the dropdown button */
 }
 
 /* Style the dropdown content */
@@ -42,7 +42,10 @@ h2 {
   display: none;
   position: absolute;
   background-color: #f9f9f9;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  margin-left: 9px;
+  width: 100px; /* Set a fixed width for the dropdown content */
+  box-shadow: 0px 8px 16px 8px rgba(0, 0, 0, 0);
   z-index: 1;
 }
 
@@ -62,7 +65,7 @@ h2 {
 
 /* Change color on hover */
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: #4792fa;
 }
 
 footer {

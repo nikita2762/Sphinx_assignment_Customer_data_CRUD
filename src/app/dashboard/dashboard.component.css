@@ -1,49 +1,36 @@
 body {
-  font-family: 'Arial', sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f4f4f4;
+  background-image: url('i1.webp'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 header {
-  background-color: #333;
-  color: #fff;
+  color: #050000;
   padding: 10px;
   text-align: center;
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 20px;
+.mySlides {
+  display: none;
 }
 
-nav a {
-  text-decoration: none;
-  color: #fff;
-  font-weight: bold;
-}
-
-section {
-  margin: 20px;
-}
-
-section h2 {
-  color: #333;
-}
-
-ul {
-  list-style: none;
-  padding: 0;
-}
-
-li {
-  margin-bottom: 10px;
+img {
+  height: auto;
+  max-width: 100%; /* Ensure the image doesn't exceed its container width */
+  height: auto; /* Maintain the aspect ratio of the image */
+  display: block; /* Remove any default inline spacing */
+  margin: 20px 0; /* Add margin above and below the image */
+  border-radius: 8px; /* Optionally add border-radius for rounded corners */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optionally add a subtle box shadow */
 }
 
 footer {
@@ -54,4 +41,20 @@ footer {
   position: fixed;
   bottom: 0;
   width: 100%;
+}
+
+/* dashboard.component.css */
+
+.dashboard-content {
+  text-align: center; /* Center-align the text within the section */
+  margin-top: 50px; /* Add some top margin for spacing */
+}
+
+.dashboard-content p {
+  max-width: 700px; /* Set a maximum width for the paragraph */
+  margin: 0 auto; /* Center the paragraph horizontally using auto margins */
+  line-height: 2; /* Adjust line height for better readability */
+  color: #000000;
+  background-color: rgb(95, 146, 216);
+  font-size: medium;
 }

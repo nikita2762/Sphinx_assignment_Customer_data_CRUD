@@ -32,10 +32,10 @@ export class LoginComponent implements OnInit {
         (data) => {
           alert('Login successful!');
           //this.createAdmin.reset();
-          this.router.navigate(['/view']);
+          this.router.navigate(['/dashboard']);
         },
         (error) => {
-          alert('Something went wrong');
+          alert('Please fill all the fields');
         }
       );
     } 

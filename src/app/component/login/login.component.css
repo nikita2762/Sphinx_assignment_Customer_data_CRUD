@@ -20,6 +20,17 @@
   }
   
   button {
-    width: 100%; /* Make the button take up the full width of the container */
+    width: 30%; /* Make the button take up the full width of the container */
+    padding: 8px;
+    background-color: rgb(94, 97, 108);
+    color: aliceblue;
   }
   
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('i1.webp'); /* Replace with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }

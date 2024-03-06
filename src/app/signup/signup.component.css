@@ -1,0 +1,36 @@
+.login-container {
+  max-width: 10px; /* Set the maximum width of the container */
+  margin: auto; /* Center the container horizontally */
+  padding: 20px; /* Add some padding for better aesthetics */
+}
+
+.form-group {
+  margin-bottom: 15px; /* Add some space between form groups */
+}
+
+label {
+  display: block; /* Make labels block-level to stack them vertically */
+  margin-bottom: 5px; /* Add some space between labels and inputs */
+}
+
+input {
+  width: 20%; /* Make the input fields take up the full width of the container */
+  padding: 8px; /* Add padding to the input fields */
+  box-sizing: border-box; /* Include padding and border in the total width/height */
+}
+
+button {
+  width: 30%; /* Make the button take up the full width of the container */
+  padding: 8px;
+  background-color: rgb(94, 97, 108);
+  color: aliceblue;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url('i1.webp'); /* Replace with the actual path to your image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}

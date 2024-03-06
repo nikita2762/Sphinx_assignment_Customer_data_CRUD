@@ -24,25 +24,24 @@
 
 <body>
 
-    <div style="max-width: 320px; margin: auto; padding: 10px; border: 1px solid #060000; border-radius: 5px;">
+    <div style="max-width: 320px; margin: auto; padding: 10px; border: 1px solid #080000; border-radius: 5px;">
         <p></p>
         <h2 style="text-align: center;">User Login</h2>
 
         <!-- Update formGroup to the correct form group name (e.g., loginForm) -->
         <form class="text-center" [formGroup]="loginuser" (ngSubmit)="onSubmit(loginuser)">
-            <div style="margin-bottom: 10px;">
-                <label for="Username">Username:</label>
+          
+          <div style="margin-bottom: 20px;">
                 <!-- Update formControlName to the correct control name (e.g., 'username') -->
-                <input type="text" id="username" formControlName="username" required style="width: 100%; padding: 8px;">
+                <input type="text" id="username" formControlName="username" placeholder="Enter Username" required style="width: 100%; padding: 8px;">
             </div>
             
-            <div style="margin-bottom: 10px;">
-                <label for="Password">Password:</label>
+            <div style="margin-bottom: 20px;">
                 <!-- Update formControlName to the correct control name (e.g., 'password') -->
-                <input type="password" id="password" formControlName="password" required style="width: 100%; padding: 8px;">
+                <input type="password" id="password" formControlName="password" placeholder="Enter password" required style="width: 100%; padding: 8px;">
             </div>
 
-            <button type="submit">Submit</button>
+            <button  type="submit">Login</button>
         </form>
 
     </div>

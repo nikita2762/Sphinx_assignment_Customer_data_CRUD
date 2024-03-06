@@ -14,32 +14,33 @@ export class SignupComponent implements OnInit {
   createuser: FormGroup  = new FormGroup({});
   constructor(private employeeservice: MyserviceService, private router: Router) { }
 
-
-  
   ngOnInit(): void {
     this.createuser = new FormGroup({
       username: new FormControl('', Validators.required),
-      email: new FormControl('', [Validators.required, Validators.email]),
+      email: new FormControl('', Validators.required),
       password: new FormControl('', Validators.required),
     });
   }
-
   onSubmit(form: FormGroup) {
+    if (form.valid) {
+      // Your form submission logic here
       const newUser = {
-        username: form.value.username, email: form.value.email, password: form.value.password
+        username: form.value.username,
+        email: form.value.email,
+        password: form.value.password
       };
-
-      // Assuming you have a createuser method in your MyserviceService
+  
       this.employeeservice.createUser(newUser).subscribe(
         (data) => {
           alert('Signup successful!');
-          //this.createAdmin.reset();
           this.router.navigate(['/login']);
         },
         (error) => {
           alert('Something went wrong');
         }
       );
-    } 
+    } else {
+      alert('Please fill in all required fields.');
+    }
   }
-
+}  
