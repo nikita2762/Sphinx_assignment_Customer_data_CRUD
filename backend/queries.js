@@ -96,25 +96,49 @@ const createuser = (request, response) => {
 };
 
 const loginuser = (request, response) => {
-  const { username, password } = request.body;
-  console.log(username, password);
+  const { email, password } = request.body;
+
+  if (!email || !password) {
+    response.status(400).json({ status: 400, message: 'Missing fields' });
+    return;
+  }
 
   pool.query(
-    'SELECT * FROM "User" WHERE username = $1 AND password = $2',
-    [username, password],
+    'SELECT * FROM "User" WHERE email = $1 AND password = $2',
+    [email, password],
     (error, results) => {
       if (error) {
-        console.log('Error while attempting to log in');
-        console.log(error);
-        throw error;
+        console.error('Error while attempting to log in');
+        console.error(error);
+        response.status(500).json({ status: 500, message: 'Internal Server Error' });
+        return;
       }
 
       if (results.rows.length === 1) {
         // Login successful
         response.json({ status: 200, message: 'Login successful' });
       } else {
-        // Invalid username or password
-        response.status(401).json({ status: 401, message: 'Invalid username or password' });
+        // Check if the email or password is incorrect
+        pool.query(
+          'SELECT * FROM "User" WHERE email = $1',
+          [email],
+          (emailError, emailResults) => {
+            if (emailError) {
+              console.error('Error while checking email');
+              console.error(emailError);
+              response.status(500).json({ status: 500, message: 'Internal Server Error' });
+              return;
+            }
+
+            if (emailResults.rows.length === 0) {
+              // Wrong email
+              response.status(401).json({ status: 401, message: 'Wrong email' });
+            } else {
+              // Wrong password
+              response.status(401).json({ status: 401, message: 'Wrong password' });
+            }
+          }
+        );
       }
     }
   );
