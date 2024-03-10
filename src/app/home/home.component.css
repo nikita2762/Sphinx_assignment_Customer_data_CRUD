@@ -1,17 +1,23 @@
-body {
-  margin: 0;
-  padding: 0;
-  background-image: url('i1.webp'); /* Replace with the actual path to your image */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Make the container take the full height of the viewport */
 }
+
+
 .home-container {
+  background-image: url('/i1.webp'); 
   text-align: center;
   flex-direction: column;
   align-items: center;
-  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  padding: 0;
+  flex: 1; /* Allow the container to grow and take remaining space */
 }
+
 .signup-button {
   margin-top: auto; /* Push the button to the bottom */
   position: absolute;

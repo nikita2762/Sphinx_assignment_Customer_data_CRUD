@@ -5,7 +5,6 @@ import { AddComponent } from './component/add/add.component';
 import { HomeComponent } from './home/home.component';
 import { EditComponent } from './component/edit/edit.component';
 import { ViewComponent } from './component/view/view.component';
-import { WatchComponent } from './component/watch/watch.component';
 import { LoginComponent } from './component/login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 
@@ -15,7 +14,6 @@ const routes: Routes = [
   { path:'login', component: LoginComponent },
   {path:'add',component:AddComponent},
   {path:'view',component:ViewComponent},
-  {path:'watch',component:WatchComponent},
   {path:'edit/:id',component:EditComponent},
   { path: 'dashboard', component: DashboardComponent },
   { path: 'home', component: HomeComponent }

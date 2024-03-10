@@ -12,10 +12,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { EditComponent } from './component/edit/edit.component';
 import { SpinnerComponent } from './component/spinner/spinner.component';
-import { WatchComponent } from './component/watch/watch.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { LoginComponent } from './component/login/login.component';
-//import { SignupComponent } from './component/signup/signup.component';
 import { HomeComponent } from './home/home.component';
 import { RouterModule, Routes } from '@angular/router';
 import { SignupComponent } from './signup/signup.component';
@@ -29,11 +27,9 @@ import { SignupComponent } from './signup/signup.component';
     ViewComponent,
     EditComponent,
     SpinnerComponent,
-    WatchComponent,
     LoginComponent,
-   // SignupComponent,
     HomeComponent,
-   SignupComponent, // Assuming your login component is named LoginComponent
+   SignupComponent, 
   ],
 
   imports: [
