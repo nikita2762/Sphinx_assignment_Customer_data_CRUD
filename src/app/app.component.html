@@ -1,27 +1,6 @@
-<!-- Adjust path and height as needed -->
-<h2>Customer Management System</h2>
-
-<div class="nav-links">
- <div class="dropdown">
-    <button class="dropbtn">Signup/Login</button>
-    <div class="dropdown-content">
-      <a href="signup">Signup</a>
-      <a href="login" id="logout">Login</a>
-      <a href="#" id="logout">Logout</a>   
-    </div>
-  </div>
-</div>
 
 <footer>
   <p>&copy; 2024 Customer Management Dashboard. All rights reserved.</p>
 </footer>
 <router-outlet></router-outlet>
 
-<script>
-  // Add a script to handle the logout functionality
-  document.getElementById('logout').addEventListener('click', function() {
-    // Implement your logout logic here, for example, redirecting to a logout route
-    // window.location.href = '/logout';
-    console.log('User logged out');
-  });
-</script>

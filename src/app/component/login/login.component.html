@@ -2,8 +2,8 @@
   <h2>Login</h2>
   <form (ngSubmit)="loginUser()" #loginForm="ngForm">
     <div class="form-group">
-      <label for="username">Username:</label>
-      <input type="text" id="username" name="username" [(ngModel)]="username" class="form-control" required>
+      <label for="email">Username:</label>
+      <input type="text" id="email" name="email" [(ngModel)]="email" class="form-control" required>
     </div>
     <div class="form-group">
       <label for="password">Password:</label>
@@ -23,17 +23,18 @@
 </head>
 
 <body>
-
+  <h2>Customer Management System</h2>
+<div style="padding:80px">
     <div style="max-width: 320px; margin: auto; padding: 10px; border: 1px solid #080000; border-radius: 5px;">
         <p></p>
-        <h2 style="text-align: center;">User Login</h2>
+        <h3 style="text-align: center;font-size:large"><b>User Login</b></h3>
 
         <!-- Update formGroup to the correct form group name (e.g., loginForm) -->
         <form class="text-center" [formGroup]="loginuser" (ngSubmit)="onSubmit(loginuser)">
           
           <div style="margin-bottom: 20px;">
-                <!-- Update formControlName to the correct control name (e.g., 'username') -->
-                <input type="text" id="username" formControlName="username" placeholder="Enter Username" required style="width: 100%; padding: 8px;">
+                <!-- Update formControlName to the correct control name (e.g., 'email') -->
+                <input type="text" id="email" formControlName="email" placeholder="Enter Email" required style="width: 100%; padding: 8px;">
             </div>
             
             <div style="margin-bottom: 20px;">
@@ -41,10 +42,13 @@
                 <input type="password" id="password" formControlName="password" placeholder="Enter password" required style="width: 100%; padding: 8px;">
             </div>
 
-            <button  type="submit">Login</button>
+            <button  type="submit" style="margin-bottom: 10px;">Login</button>
+            <p style="text-align: center;color:rgb(1, 1, 19); margin-top: 10px;">Don't have an account? &nbsp;<a href="/signup">Signup </a> &nbsp;here</p>
+
         </form>
 
     </div>
+  </div>
     <router-outlet></router-outlet>
 
 </body>

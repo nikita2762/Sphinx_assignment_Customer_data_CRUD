@@ -9,10 +9,13 @@
 </head>
 
 <body>
+    <h2>Customer Management System</h2>
+
+    <div style="padding:40px">
 
     <div style="max-width: 350px; margin: auto; padding: 10px; border: 1px solid #060000; border-radius: 5px;">
         <p></p>
-        <h2 style="text-align: center;">Signup</h2>
+        <h3 style="text-align: center; font-size:large"><b>Signup</b></h3>
 
         <form class="text-center" [formGroup]="createuser" (ngSubmit)="onSubmit(createuser)">
             <div style="margin-bottom: 10px;">
@@ -29,11 +32,12 @@
             </div>
 
             <button style="margin-bottom: 10px;" type="submit">Submit</button>
+            <p style="text-align: center;color:rgb(1, 1, 19); margin-top: 10px;">Already have an account? <a href="/login">Login </a> &nbsp;here</p>
+
         </form>
 
-        <p style="text-align: center;color:rgb(1, 1, 19); margin-top: 10px;">Already have an account?<a href="/login"><br>Login </a> &nbsp;here</p>
     </div>
-
+    </div>
     <script src="home.component.js"></script>
     <router-outlet></router-outlet>
 

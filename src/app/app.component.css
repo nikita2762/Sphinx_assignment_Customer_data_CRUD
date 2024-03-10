@@ -6,67 +6,6 @@ h2 {
   text-align: center;
 }
 
-.nav-links {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: white;
-  padding: 5px 10px;
-  margin-left: 5px;
-  border-radius: 3px;
-  background-color: #555555;
-  cursor: pointer;
-}
-
-.nav-link:hover {
-  background-color: #f7ef08;
-}
-
-/* Style the dropdown button */
-.dropbtn {
-  background-color: #757575;
-  color: white;
-  padding: 8px 10px;
-  margin-left: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 110px; /* Set a fixed width for the dropdown button */
-}
-
-/* Style the dropdown content */
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  border-radius: 5px;
-  margin-left: 9px;
-  width: 100px; /* Set a fixed width for the dropdown content */
-  box-shadow: 0px 8px 16px 8px rgba(0, 0, 0, 0);
-  z-index: 1;
-}
-
-/* Show the dropdown content when the dropdown button is hovered over */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-/* Add some style to the links inside the dropdown */
-.dropdown-content a {
-  color: black;
-  padding: 10px;
-  text-decoration: none;
-  display: block;
-  border-bottom: 1px solid #ddd; /* Add a border between dropdown items */
-}
-
-/* Change color on hover */
-.dropdown-content a:hover {
-  background-color: #4792fa;
-}
 
 footer {
   background-color: #333;

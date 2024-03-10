@@ -1,50 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Customer Management System</title>
   <link rel="stylesheet" href="home.component.css">
-  <style>
-    .slider-container {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-      max-height: 400px; /* Adjust the maximum height of the slider */
-    }
-
-    .slider {
-      display: flex;
-      transition: transform 0.5s ease-in-out;
-    }
-
-    .slide {
-      min-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Add more styling as needed */
-  </style>
 </head>
 
 <body>
-  <div class="top-nav">
     <div class="home-container">
-
+      <h2>Customer Management System
+      </h2>
+      
       <section class="system-information">
-        <h2>About Our System</h2>
+        <h3 style="padding: 10px;"><b>About Our System</b></h3>
         <p>
           Our Customer Management System provides a comprehensive platform for managing and maintaining customer
           relationships.<br> It streamlines your business processes, enhances customer satisfaction, and drives growth.
         </p>
-
-        <!-- <img src="/image1.jpg" alt="System Image"> -->
-
       </section>
 
+      <img src="https://www.smartsource.com.sg/assets/img/client-management.jpg" alt="System Image">
+
       <section class="contact-info">
-        <h2>Contact Us</h2>
+        <h3><b>Contact Us</b></h3>
         <p>
           Have questions or need assistance? Reach out to our support team.<br>
           Email: support@customer.com<br>
@@ -52,11 +31,11 @@
         </p>
       </section>
 
-    </div>
-  </div>
+ </div>
 
-  <script src="home.component.js"></script>
-  
+    <div class="signup-button">
+      <a href="signup" style="padding-right: 10px;">Signup</a>
+    </div>
+
 </body>
-<router-outlet></router-outlet>
 </html>

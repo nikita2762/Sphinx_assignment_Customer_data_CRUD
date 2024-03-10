@@ -10,11 +10,15 @@
 </head>
 
 <body>
+  <h2>Customer Management System </h2>
   <header>
     <h1>Welcome to the Customer Management Dashboard</h1>
       
-        <a href="/view">Customers List</a> &nbsp; <a href="/add">Add Customer</a>
-   </header>
+    <div class="button-container">
+      <a href="/view">Customers List</a> &nbsp;
+      <a href="/add">Add Customer</a>
+    </div>
+  </header>
 
    <section class="dashboard-content">
     <p>
@@ -22,7 +26,22 @@
       and add new customers to the system. <br> Explore the features and enhance your customer relationship management.
     </p>
   </section>
-    
+
+  <div class="logout-button">
+    <a href="javascript:void(0);" onclick="logout()" style="padding-right: 10px;">Logout</a>
+  </div>
+
+  
+  <script>
+    function logout() {
+      // Clear session storage
+      sessionStorage.clear();
+      
+      // Redirect to the home page
+      window.location.href = "/";
+    }
+  </script>
+
   <footer>
     <p>&copy; 2024 Customer Management Dashboard. All rights reserved.</p>
   </footer>
