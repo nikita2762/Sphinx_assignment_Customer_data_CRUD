@@ -78,22 +78,38 @@ const deleteCustomer = (request, response) => {
 };
 
 const createuser = (request, response) => {
-  const { username, email, password} = request.body;
-  console.log(username, email, password);
-  pool.query(
-    'INSERT INTO "User" (username,email,password) VALUES ($1, $2, $3)',
-    [username, email, password],
-    (error, results) => {
-      if (error) {
-        console.log('error while signing up');
-        console.log(error);
-        throw error;
-      }
-      // response.status(201).send(`Customer added with ID: ${results.rows[0].id}`);
-      response.status(201).json({status: 201, message: `New user added`})
+  const { username, email, password } = request.body;
+
+  // Check if the email already exists
+  pool.query('SELECT * FROM "User" WHERE email = $1', [email], (error, results) => {
+    if (error) {
+      console.error('Error checking email existence:', error);
+      response.status(500).json({ status: 500, message: 'Internal Server Error' });
+      return;
     }
-  );
+
+    if (results.rows.length > 0) {
+      // Email already exists
+      response.status(400).json({ status: 400, message: 'Email already exists. Please use another email.' });
+    } else {
+      // Email doesn't exist, proceed with user creation
+      pool.query(
+        'INSERT INTO "User" (username, email, password) VALUES ($1, $2, $3)',
+        [username, email, password],
+        (error, results) => {
+          if (error) {
+            console.error('Error while signing up:', error);
+            response.status(500).json({ status: 500, message: 'Internal Server Error' });
+            return;
+          }
+
+          response.status(201).json({ status: 201, message: 'New user added' });
+        }
+      );
+    }
+  });
 };
+
 
 const loginuser = (request, response) => {
   const { email, password } = request.body;

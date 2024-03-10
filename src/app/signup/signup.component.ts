@@ -23,7 +23,6 @@ export class SignupComponent implements OnInit {
   }
   onSubmit(form: FormGroup) {
     if (form.valid) {
-      // Your form submission logic here
       const newUser = {
         username: form.value.username,
         email: form.value.email,
@@ -36,11 +35,16 @@ export class SignupComponent implements OnInit {
           this.router.navigate(['/login']);
         },
         (error) => {
-          alert('Something went wrong');
+          if (error.status === 400 && error.error.message.includes('Email already exists')) {
+            alert('Email already exists. Please use another email.');
+          } else {
+            alert('Something went wrong');
+          }
         }
       );
     } else {
       alert('Please fill in all required fields.');
     }
   }
+  
 }  
