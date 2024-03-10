@@ -43,5 +43,13 @@ export class ViewComponent implements OnInit {
   })
 }
 
+logout(this: any) {
+  // Clear session storage
+  sessionStorage.clear();
+  
+  // Redirect to the home page using Angular router
+  this.router.navigate(['/']);
+}
 
 }
+
